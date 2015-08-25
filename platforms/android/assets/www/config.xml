@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.apes.tls" version="1.0.0">
+    <name>TLS</name>
+    <description>TLS Application</description>
+    <author email="viktor.koro@gmail.com" href="http://apes-at-work.com">Apes</author>
+    
+
+    <icon src="res/icon/icon.png"/>
+    <gap:splash src="res/screen/screen.png"/>
+    <!-- -->
+    <!-- -->
+    <icon gap:platform="android" height="96" src="res/icon/android/icon-96-xhdpi.png" width="96"/>
+    <icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144"/>
+    <gap:splash gap:platform="android" height="800" src="res/screen/android/screen-hdpi-portrait.png" width="480"/>
+    <gap:splash gap:platform="android" height="320" src="res/screen/android/screen-hdpi-portrait.png" width="200"/>
+    <gap:splash gap:platform="android" height="480" src="res/screen/android/screen-hdpi-portrait.png" width="320"/>
+    <gap:splash gap:platform="android" height="1280" src="res/screen/android/screen-hdpi-portrait.png" width="720"/>
+    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768"/>
+    <gap:splash gap:platform="ios" height="2048" src="res/screen/ios/screen-ipad-portrait-2x.png" width="1536"/>
+    <gap:splash gap:platform="ios" height="480" src="res/screen/screen.png" width="320"/>
+    <gap:splash gap:platform="ios" height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640"/>
+    <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" width="640"/>
+    <feature name="http://api.phonegap.com/1.0/device"/>
+     
+    <!--
+    <feature name="debug-server" required="true">
+        <param name="domain" value="http://192.168.0.100:8086"/>
+        <param name="key" value="tls"/>
+    </feature>
+    -->
+    <preference name="orientation" value="portrait"/>
+    <preference name="target-device" value="universal"/>
+    <preference name="fullscreen" value="false"/>
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="KeyboardShrinksView" value="false"/>
+    <!-- 
+    stateVisible|
+    -->
+    <!-- -->
+    <preference name="android-windowSoftInputMode" value="adjustResize"/>
+    <preference name="android-minSdkVersion" value="7"/>
+    <preference name="android-maxSdkVersion" value="16"/>
+    <preference name="android-targetSdkVersion" value="16"/>
+    <preference name="phonegap-version" value="3.3.0"/>
+    <preference name="exit-on-suspend" value="false"/>
+    <preference name="webviewbounce" value="false"/>
+    <access origin="*"/>
+    <content src="index.html"/>
+    
+    
+    <!-- Core plugins -->
+    
+    
+    <!--
+    <gap:plugin name="org.apache.cordova.media-capture"/>
+    <gap:plugin name="org.apache.cordova.battery-status"/>
+    <gap:plugin name="org.apache.cordova.contacts"/>
+    <gap:plugin name="org.apache.cordova.media"/>
+    <gap:plugin name="org.apache.cordova.splashscreen"/>
+    
+    <gap:plugin name="org.apache.cordova.vibration"/>
+    <gap:plugin name="org.apache.cordova.globalization"/>
+    
+    
+    
+    -->
+    <gap:plugin name="org.apache.cordova.camera"/>
+    <gap:plugin name="org.apache.cordova.console"/>
+    <gap:plugin name="org.apache.cordova.device"/>
+    <gap:plugin name="org.apache.cordova.device-orientation"/>
+    <gap:plugin name="org.apache.cordova.dialogs"/>
+    <gap:plugin name="org.apache.cordova.file"/>
+    <gap:plugin name="org.apache.cordova.file-transfer"/>
+    <gap:plugin name="org.apache.cordova.geolocation"/>
+    <gap:plugin name="org.apache.cordova.network-information"/>
+    <gap:plugin name="org.apache.cordova.inappbrowser"/>
+    
+    
+    <gap:plugin name="com.phonegap.plugins.PushPlugin"/>
+    
+    <!--
+    <gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
+    <gap:plugin name="com.adobe.plugins.pushplugin"/>
+    -->
+    
+</widget>

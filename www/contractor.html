@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TLS || Contractor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+
+    </head>
+    <body id="body">
+        <div id="inner" class="inner">
+        <div class="container" id="container">
+
+
+            <!-- ================  MAIN TAB  =================== -->
+            <div class="page" id="main-menu-tab">
+                <div class="header">
+                    <em class="title">Welcome <i id="contractor-name" class="name"></i></em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller paddinged">
+                    <div class="table-wrapper">
+                    <ul class="navigation">
+                        <li onclick="showProfileTab();">
+                            <i class="nav-profile"></i>
+                            <span> Profile </span>
+                        </li>
+                        <li onclick="showTimesheetsTab();">
+                            <i class="nav-timesheets"></i>
+                            <span> Timesheets </span>
+                        </li>
+                        <li onclick="showJobsNearbyTab(true);">
+                            <i class="nav-jobs-near"></i>
+                            <span> Jobs nearby </span>
+                        </li>
+                        <li onclick="showAvailabilityTab();">
+                            <i class="nav-availability"></i>
+                            <span> Availability </span>
+                        </li>
+                        <li onclick="showMyJobsTab(true);">
+                            <i class="nav-jobs"></i>
+                            <span> My jobs </span>
+                        </li>
+                        <li  onclick="showMyCoursesTab();">
+                            <i class="nav-courses"></i>
+                            <span> My courses </span>
+                        </li>
+                        
+                    </ul>
+                    </div>
+                </div>
+<!--
+                <div class="notifications-container" style="display:none;">
+                    <h2>Notifications</h2>
+                    <input class="remove-all-notifications link-button" name="yt0" type="button" value="Clear All" id="clear-all-notification-button" />
+
+                    <ul id="notifications-list">
+                        <li style="display:none;"> 
+                            <a class="odd" href="#" onclick="{0}; return false;" >{1}</a>
+                            <a href="#" id="delete__{2}" onclick="return false;" class="delete-notification-button">delete</a>
+                        </li>
+                    </ul>
+                </div>
+-->                
+                <span class="invisible">
+                    <span id="main-page-info-button" class="icon info" onclick="openInfoDialog('main-menu-tab');"></span>
+                </span>
+
+                <div class="info-bar">
+                    <div class="dim-only-center">
+                        <span class="arrow right-up-arrow" ></span>
+                        <span class="arrow right-down-arrow" ></span>
+                        <span class="arrow left-down-arrow" ></span>
+                        <div class="text-area" style="bottom:0;">
+                            <span class="right-up-text small-text" > Click here to log out </span>
+                            <span class="right-down-text small-text" > Visit our website </span>
+                            <span class="left-down-text small-text" > Call the office </span>
+                            <button class="info-bar-button vertical-centered-button"  onclick="closeInfoDialog();">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- =============== END MAIN TAB ================== -->
+
+
+
+            <!-- ================  PROFILE TAB  =================== -->
+            <div class="page" id="profile-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMainMenuTab();"></button>
+                    <em class="title"> Profile </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller paddinged">
+                    <div class="table-wrapper">
+                        
+                    <ul class="navigation">
+                        <li onclick="showViewProfileTab();">
+                            <i class="nav-profile"></i>
+                            <span> Profile </span>
+                        </li>
+                        <li onclick="showLicensesTab();">
+                            <i class="nav-licenses"></i>
+                            <span> Licenses </span>
+                        </li>
+                        
+                    </ul>
+                    
+                    </div>
+                </div>
+                
+                <div class="invisible">
+                    <span id="profile-reload-button" class="icon refresh" onclick="refreshAllOfUser();"></span>
+                </div>
+                
+            </div>
+            <!-- ==============  PROFILE TAB  ================= -->
+
+            
+            
+            <!-- ===============  VIEW PROFILE TAB  ================= -->
+            <div class="page" id="view-profile-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showProfileTab();"></button>
+                    <em class="title"> Personal details </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+
+                <div class="content scroller small-paddinged">
+                    <div id="contractor-data-view" class="profile-form-view">
+
+                        <div class="items">
+                            <div class="avatar">
+                                <img class="avatar-img" alt="photo" src="img/man_small.png" />
+                            </div>
+                            <ul class="general">
+                                <li>
+                                    <b>Name</b>
+                                    <span title="User[forename]" ></span>
+                                    <span title="User[surname]" ></span>
+                                </li>
+                                <!--
+                                <li class="odd surname">
+                                    <b>Surname</b>
+                                </li>
+                                -->
+                                <li>
+                                    <b>DOB</b>
+                                    <span title="User[dob]" ></span>
+                                </li>
+                                <li>
+                                    <b>NI</b>
+                                    <span title="ContractorData[national_insurance]" ></span>                            
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="items">
+                            <ul class="col">
+                                <li>
+                                    <b>Land Line Number</b>
+                                    <span title="ContractorData[land_line_number]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Mobile Number</b>
+                                    <span title="ContractorData[mobile_number]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>E-mail Address</b>
+                                    <span title="User[email]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Next of Kin name</b>
+                                    <span title="ContractorData[kin_name]"></span>                            
+                                </li>
+                                <li>
+                                    <b>Next of Kin Mobile</b>
+                                    <span title="ContractorData[kin_mobile]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Next of Kin Relationship</b>
+                                    <span title="ContractorData[kin_relationship]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Address</b>
+                                    <span title="ContractorData[address_1]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Address</b>
+                                    <span title="ContractorData[address_2]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Address</b>
+                                    <span title="ContractorData[address_3]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Address</b>
+                                    <span title="ContractorData[address_4]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Postcode</b>
+                                    <span title="ContractorData[postcode]" ></span>                            
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="items">
+                            <span>Payment details:</span>
+                            <ul class="col">
+                                <li>
+                                    <b>Bank Name</b>
+                                    <span title="ContractorData[bank_name]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Account Number</b>
+                                    <span title="ContractorData[acc_number]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Sort code</b>
+                                    <span title="ContractorData[sort_code]" ></span>                            
+                                </li>
+                                <li>
+                                    <b>Payment Method</b>
+                                    <span title="ContractorData[payment_method]" ></span>
+                                </li>
+                            </ul>
+
+                            <b>Notes</b>
+                            <ul class="col">
+                                <li>
+                                    <span class="text-area" title="ContractorData[notes]" ></span>                
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="invisible" >
+                            <button id="to-edit-profile-button" class="little-green-button" type="button" onclick="showEditProfileTab();"> Edit </button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========  END VIEW PROFILE TAB  ============== -->
+            
+            
+            <!-- ===============  EDIT PROFILE TAB  ================= -->
+            <div class="page" id="edit-profile-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showViewProfileTab();"></button>
+                    <em class="title"> Edit personal details </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                <div class="profile-form-edit" >
+                <form id="contractor-data-form" onsubmit="submitContractorDataForm(); return false; ">
+
+                    <div class="items">
+                        <div class="avatar">
+                            <img class="avatar-img" src="img/man_small.png" alt="photo" />
+                            <span class="plus-button" onclick="addOrChangeAvatar();"></span>
+                            <span class="minus-button" onclick="deleteAvatar();"></span>
+                        </div>
+                        <ul class="general">
+                            <li>
+                                <b>Name</b>
+                                <input maxlength="32" name="User[forename]" id="ContractorData_forename" type="text" value="" />
+                                </li>
+                            
+                            <li>
+                                <b>Surname</b>
+                                <input maxlength="32" name="User[surname]" id="ContractorData_surname" type="text" value="" />
+                            </li>
+                            
+                            <li>
+                                <b>DOB</b>
+                                <input id="ContractorData_dob" name="ContractorData[dob]" type="text" maxlength="32" value="" readonly="readonly" />
+                            </li>
+                            <li>
+                                <b>NI</b>
+                                <input maxlength="32" name="ContractorData[national_insurance]" type="text" value="" />                            
+                            </li>
+                            
+                            
+                        </ul>
+
+                    </div>
+                    <div class="items">
+                        <ul class="col">
+                            <li>
+                                <b>Land Line Number</b>
+                                <input maxlength="32" name="ContractorData[land_line_number]" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Mobile Number</b>
+                                <input maxlength="32" name="ContractorData[mobile_number]" id="ContractorData_mobile_number" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>E-mail Address</b>
+                                <input maxlength="32" name="User[email]" id="ContractorData_user_email" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Next of Kin name</b>
+                                <input maxlength="32" name="ContractorData[kin_name]" id="ContractorData_kin_name" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Next of Kin Mobile</b>
+                                <input maxlength="32" name="ContractorData[kin_mobile]" id="ContractorData_kin_mobile" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Next of Kin Relationship</b>
+                                <input maxlength="32" name="ContractorData[kin_relationship]" id="ContractorData_kin_relationship" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Address</b>
+                                <input maxlength="32" name="ContractorData[address_1]" id="ContractorData_address_1" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Address</b>
+                                <input maxlength="32" name="ContractorData[address_2]" id="ContractorData_address_2" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Address</b>
+                                <input maxlength="32" name="ContractorData[address_3]" id="ContractorData_address_3" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Address</b>
+                                <input maxlength="32" name="ContractorData[address_4]" id="ContractorData_address_4" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Postcode</b>
+                                <input maxlength="32" name="ContractorData[postcode]" id="ContractorData_postcode" type="text" value="" />                            
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="items">
+                        <span>Payment details:</span>
+                        <ul class="col">
+                            <li>
+                                <b>Bank Name</b>
+                                <input maxlength="32" name="ContractorData[bank_name]" id="ContractorData_bank_name" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Account Number</b>
+                                <input maxlength="32" name="ContractorData[acc_number]" id="ContractorData_acc_number" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Sort code</b>
+                                <input maxlength="32" name="ContractorData[sort_code]" id="ContractorData_sort_code" type="text" value="" />                            
+                            </li>
+                            <li>
+                                <b>Payment Method</b>
+                                <select name="ContractorData[payment_method]" id="ContractorData_payment_method" class="select-mod">
+                                    <option value="Backoffice" selected="selected">Backoffice</option>
+                                    <option value="Winfrey-Briggs">Winfrey-Briggs</option>
+                                    <option value="Liquid Friday">Liquid Friday</option>
+                                    <option value="Invoice">Invoice</option>
+                                </select>
+                            </li>
+                        </ul>
+                        
+                        <span>Notes</span>
+                        <ul class="col">
+                            <li>
+                                <textarea  maxlength="255" rows="4" name="ContractorData[notes]" id="ContractorData_notes"></textarea>                
+                            </li>
+                        </ul>
+                    </div>
+
+                    <input value="user_id_to_change" name="ContractorData[user_id]" id="ContractorData_user_id" type="hidden" />
+                    
+                    <div class="invisible">
+                        <button id="save-profile-button" class="little-green-button" type="submit" onclick="submitContractorDataForm(); return false;"> Save </button>
+                    </div>
+                   
+                </form>
+                </div>
+                </div>
+            </div>
+            <!-- =========  END EDIT PROFILE TAB  ============== -->
+
+
+           
+            <!-- =========      LICENSES TAB       ============== -->
+            <div class="page" id="licenses-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showProfileTab();"></button>
+                    <em class="title"> Licenses </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content">
+                    
+                    <div id="skill-image-pattern" class="invisible">
+                        <i class="preview-image"><img src="{thumbSrc}" alt="" class="preview-small" onclick="openInFullScreenView('{bigSrc}');" /></i>
+                    </div>
+                    
+                    <div id="skill-pattern" class="invisible">
+                       <div class="skill-item">
+                           <div>
+                            <i class="image">
+                                <img class="big-preview" alt="big-picture" src="{0}"  onload="resizeThisImage(this)" onclick="openInFullScreenView('{1}');" />
+                            </i>
+                            <div class="skill-content">
+                                <p class="text">
+                                    <span class="license-type"> {2} </span>
+                                    <span class="expires"> {3} </span>
+                                </p>
+
+                                <div class="preview-panel">
+                                    <div class="preview-panel-list">
+                                        {4}
+                                    </div>
+                                    <img style="display: none;" class="preview-small" />
+                                    <span class="plus" onclick="createDialogUploadLicense('{5}');"></span>
+                                </div>
+                            </div>
+                            </div>
+                            <p class="clear"></p>
+                        </div>
+                    </div>
+                    <div class="wrapper" style="border-bottom: 3em solid transparent;" >
+                        <div class="wrapper small-paddinged scroller">
+                        <div id="skills-list" class="skills-list">
+
+                        </div>
+                        </div>
+                    </div>
+                    <button id="add-skill-button" class="add-skill-button" onclick="showAddSkillTab();" >Add new Qualification</button>
+                </div>
+                
+                
+                <span class="invisible">
+                    <span id="licenses-info-button" class="icon info" onclick="openInfoDialog('licenses-tab');"></span>
+                </span>
+                
+                <div class="info-bar">
+                    <div class="dim-licenses">
+                        <span class="plus"></span>
+                        <span class="left-up-arrow arrow"></span>
+                        <div class="text-area-licenses">
+                            <span class="message-licenses">
+                            Tap the plus icon to add a new licence image from your camera gallery.
+                            </span>
+                            <button class="info-bar-button" style="" onclick="closeInfoDialog();"><span class="big-button-text">Close</button>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+            <!-- =========    END LICENSES TAB      ============== -->
+            
+            
+            
+            <!-- =========    ADD SKILL TAB      ============== -->
+            <div class="page" id="add-skill-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showLicensesTab();"></button>
+                    <em class="title"> Add Skill/License </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                    <form enctype="multipart/form-data" id="add-qualification-form"
+                              method="post" onsubmit="addNewSkill(); return false;">
+
+                        <div class="add-skill-content">
+                            <ul class="list">
+                                <li>
+                                    <b style="line-height: initial; display: inline-block;"> <span >Qualification <br/> type</span> </b>
+                                    <select name="SkillMapping[skill_id]" id="SkillMapping_skill_id" class="select-mod">
+                                        <option value="0">void</option>
+                                    </select>                
+                                </li>
+
+                                <li>
+                                    <b>Expiry date</b>
+                                    <input id="publish-date" name="SkillMapping[expiry_date]" type="text" />
+                                </li>
+
+                                <li>
+                                    <b> Upload image </b>
+
+                                    <input name="LicenseMapping[image]" type="hidden" value=""  />
+                                    <!--
+                                    <input name="LicenseMapping[image]" id="LicenseMapping_image" type="file" /> 
+                                    -->
+                                    <input name="ajax" type="hidden" value="add_skill" />                                
+                                    <button type="button" class="browse-image" onclick="setSnapshotToNewSkillForm();"> Browse </button>
+                                </li>
+                                <li class="buttons">
+                                    <button class="button" type="submit" ><span class="big-button-text" > Create </span> </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <!-- =======    END ADD SKILL TAB     ============= -->
+            
+            
+            
+            
+            
+            <!-- =============  TIMESHEETS TAB  =================== -->
+            <div class="page" id="timesheets-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMainMenuTab();"></button>
+                    <em class="title"> Timesheets </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                    
+                    <ul id="unsubmitted-timesheet-list-item-pattern" class="invisible">
+                        <li class="unsubmitted-list-row"  onclick="showSubmitTimesheetsTab('submit', '{dateinMillis}');"> Week beginning: {date}  
+                            <!--
+                            <button class="little-green-button submit-timesheet-button" onclick="showSubmitTimesheetsTab('submit', '{dateinMillis}');">Submit</button>
+                            -->
+                        </li>
+                    </ul>
+                    
+                    <ul id="timesheet-list-item-pattern" class="invisible">
+                        <li class="list-row" onclick="showSubmitTimesheetsTab('view', '{dateinMillis}');"> Week beginning: {date} </li>
+                    </ul>
+                    
+                    <div id="timesheets-list" class="timesheet-list">
+                        <div class="timesheet-list-title">
+                            <b>Unsubmitted</b>
+                        </div>
+                        <ul id="unsubmitted-timesheet-list-items">
+                            
+                        </ul>
+                        <hr/>
+                        <div class="timesheet-list-title">
+                            <b>Submitted</b>
+                        </div>
+                        <ul id="timesheet-list-items">
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="invisible">
+                    <span id="timesheet-reload-button" class="icon refresh" onclick="buildTimesheetsTab(true);"></span>
+                </div>
+                
+            </div>
+            <!-- =======   END TIMESHEETS TAB   ============== -->
+            
+            
+            <!-- ======== SUBMIT TIMESHEETS TAB  ================= -->
+            <div class="page" id="submit-timesheet-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showTimesheetsTab();"></button>
+                    <em class="title"> Submit timesheet </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="submit-timesheet-content content scroller small-paddinged">
+                    <span class="title">
+                        Week beginning: <span id="week-beginning-date"></span>
+                    </span>
+                    
+                    <form id="submit-timesheet-form" onsubmit="submitTimesheetForm(); return false;">
+                        <table class="submit-timesheet-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>S</th>
+                                <th>S</th>
+                                <th>M</th>
+                                <th>T</th>
+                                <th>W</th>
+                                <th>T</th>
+                                <th>F</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;"> Shift </td>
+                                <td> <select id="job-sat-shift" name="Job[sat_shift]" class="selectbox" disabled="disabled"></select> </td>
+                                <td> <select id="job-sun-shift" name="Job[sun_shift]" class="selectbox" disabled="disabled"></select> </td>
+                                <td> <select id="job-mon-shift" name="Job[mon_shift]" class="selectbox" disabled="disabled"></select> </td>
+                                <td> <select id="job-tue-shift" name="Job[tue_shift]" class="selectbox" disabled="disabled"></select> </td>
+                                <td> <select id="job-wed-shift" name="Job[wed_shift]" class="selectbox" disabled="disabled"></select> </td>
+                                <td> <select id="job-thu-shift" name="Job[thu_shift]" class="selectbox" disabled="disabled"></select> </td>
+                                <td> <select id="job-fri-shift" name="Job[fri_shift]" class="selectbox" disabled="disabled"></select> </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;"> Hours </td>
+                                <td> <input id="job-sat-hours" name="Job[sat_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)" > </td>
+                                <td> <input id="job-sun-hours" name="Job[sun_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)"> </td>
+                                <td> <input id="job-mon-hours" name="Job[mon_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)"> </td>
+                                <td> <input id="job-tue-hours" name="Job[tue_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)"> </td>
+                                <td> <input id="job-wed-hours" name="Job[wed_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)"> </td>
+                                <td> <input id="job-thu-hours" name="Job[thu_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)"> </td>
+                                <td> <input id="job-fri-hours" name="Job[fri_hours]" class="hours-input" type="text" size="1" maxlength="4" placeholder="X" onkeypress="validateNumber(event)"> </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        
+                        <span class="title"> Extras </span>
+                        <ul id="timesheet-add-pay-item-pattern" class="invisible">
+                            <li class="add-pay">{addPayType}: {addPaySum}</li>
+                        </ul>
+                        <ul id="timesheet-add-pay-items">
+                            
+                        </ul>
+                        
+                        <span class="title"> Total - &pound;<span id="total-sum-for-week"></span>  </span>
+                        
+                        <input type="hidden" name="confirm" value="1" />
+                    </form>
+                    <div class="bottom-block">
+                        <span id="submit-timesheet-message" class="message" > 
+                            I have worked the hours above. Please submit my timesheet for processing
+                        </span>
+                        <button id="submit-timesheet-button" type="button" class="submit-timesheet-button little-green-button" onclick="submitTimesheetForm();"> SUBMIT </button>
+                    </div>
+                    <span class="bottom-block-blind"></span>
+                </div>
+                
+                <span class="invisible">
+                    <span id="submit-timesheet-info-button" class="icon info" onclick="openInfoDialog('submit-timesheet-tab');"></span>
+                </span>
+                <div class="info-bar">
+                    <div class="dim-all-screen">
+                        <div class="text-area">
+                            <span class="message" style="bottom: 25%; font-size: 80%;">
+                            If you have worked the hours 
+                            shown tap the SUBMIT button at 
+                            the bottom of the page or select 
+                            the Shift or Hours you want to 
+                            change and modify them. Once 
+                            they are correct, tap the SUBMIT
+                            button to send your timesheet 
+                            for processing.
+                            </span>
+                            <button class="info-bar-button" style="bottom: 0%;" onclick="closeInfoDialog();">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =======   END SUBMIT TIMESHEET TAB   ============== -->
+            
+            
+            
+            <!-- =======    JOBS NEARBY TAB     ============= -->
+            <div class="page" id="jobs-nearby-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMainMenuTab();"></button>
+                    <em class="title"> Jobs nearby </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content small-paddinged">
+                    <ul id="available-job-list-item-pattern" class="invisible">
+                        <li class="job-list-item" onclick="showDetailForJob('availableJobs', '{0}');">
+                            <span class="job-list-cell"> {1} </span>
+                            <span class="job-list-cell"> {2} </span>
+                            <span class="job-list-cell"> {3} </span>
+                        </li>
+                    </ul>
+                    <div class="jobs-list">
+                        
+                        <ul class="jobs-list-header">
+                            <li>
+                            <span class="job-list-cell"> Job number </span>
+                            <span class="job-list-cell"> Postcode </span>
+                            <span class="job-list-cell"> Location </span>
+                            </li>
+                        </ul>
+                        <div class="scroller jobs-list-items">
+                        <div id="available-jobs-not-found" class="invisible">
+                            Available jobs not found
+                        </div> 
+                        <ul id="available-jobs-list-items" >
+                            
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="invisible">
+                    <span id="jobs-nearby-info-button" class="icon info" onclick="openInfoDialog('jobs-nearby-tab');"></span>
+                    <span id="jobs-nearby-refresh-button" class="icon refresh" onclick="buildJobsNearbyTab(true);"></span>
+                </span>
+                <div class="info-bar">
+                    <div class="dim-all-screen">
+                        <div class="text-area">
+                            <span class="message top-centered-message">
+                            Click on the job you are intersted in to see full details and to express interest.
+                            </span>
+                            <button class="info-bar-button bottom-centered-button" onclick="closeInfoDialog();">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =======    JOBS NEARBY TAB     ============= -->
+            
+            
+            
+            <!-- =======       MY JOBS  TAB     ============= -->
+            <div class="page" id="my-jobs-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMainMenuTab();"></button>
+                    <em class="title"> My jobs </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content small-paddinged">
+                    <ul id="my-job-list-item-pattern" class="invisible">
+                        <li class="job-list-item" onclick="showDetailForJob('myJobs', '{0}');">
+                            <span class="job-list-cell"> {1} </span>
+                            <span class="job-list-cell"> {2} </span>
+                            <span class="job-list-cell"> {3} </span>
+                        </li>
+                    </ul>
+                    <div class="jobs-list">
+                        <ul class="jobs-list-header">
+                            <li>
+                                <span class="job-list-cell"> Job number </span>
+                                <span class="job-list-cell"> Postcode </span>
+                                <span class="job-list-cell"> Date </span>
+                            </li>
+                        </ul>
+                        <div class="scroller jobs-list-items">
+                            <div id="my-jobs-not-found" class="invisible">
+                                You are not assigned to any jobs
+                            </div>
+                            <ul id="my-jobs-list-items">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="invisible">
+                    <span id="my-jobs-info-button" class="icon info" onclick="openInfoDialog('my-jobs-tab');"></span>
+                    <span id="my-jobs-refresh-button" class="icon refresh" onclick="buildMyJobsTab(true);"></span>
+                </span>
+                <div class="info-bar">
+                    <div class="dim-all-screen">
+                        <div class="text-area">
+                            <span class="message top-centered-message">
+                            Click on the job number you need to see more details and it will open in a new screen.
+                            </span>
+                            <button class="info-bar-button bottom-centered-button" onclick="closeInfoDialog();">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =======    END MY JOBS  TAB   ============= -->
+            
+            
+            <!-- =======     VIEW JOB  TAB     ============= -->
+            <div class="page" id="view-job-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMyJobsTab(false);"></button>
+                    <em class="title"> View job </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                    <div id="view-job-pattern" class="invisible">
+                        <div class="title">Job number:  {jobNumber} </div>
+                        <span> Skill required: {skillRequired} </span>
+                        <span> Location: {location} </span>
+                        <span> Postcode: {postcode} </span>
+                        <span> Date: {date} </span>
+                        <span> Time: {time} </span>
+                        <span id="booked-by-line"> Booked by: {bookedBy} </span>
+                        <div id="view-job-extras">
+                            <span> Extras: {extrasNone}</span>
+                            {extras}
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <div id="view-job-container" class="view-job-container">
+                        
+                    </div>
+                    <div id="view-job-map" class="map">
+                            
+                    </div>
+                    <div class="center">
+                    <button id="view-job-contact-office-button" class="little-green-button small-button" onclick="showContactsTab();">
+                        Contact the office to express interest 
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <!-- =======   END VIEW JOB  TAB   ============= -->
+            
+            
+            <!-- =========   AVAILABILITY TAB    ============== -->
+            <div class="page" id="availability-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMainMenuTab();"></button>
+                    <em class="title"> Availability </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                    <div id="availability-calendar" ></div>
+                    
+                    <div class="color-boxes">
+                        <span><i class="white-cell color-box"></i> Available </span>
+                        <span><i class="blue-cell color-box"></i> Working </span>
+                        <span><i class="orange-cell color-box"></i> Holiday </span>
+                        <span><i class="red-cell color-box"></i> Unapproved Holiday </span>
+                    </div>
+                    
+                    <form id="set-as-holiday-form">
+                        <input id="ContractorHolidays_holiday_date" name="ContractorHoliday[holiday_date]" 
+                               type="hidden" value="" />
+                        <input type="hidden" name="ajax" value="set-as-weekend" />
+                        <button id="set-as-holiday-button" class="button" style="display: none;" 
+                                onclick="createHoliday(); return false;"> Set as Holiday </button>
+                    </form>
+                    
+                    <form id="unset-as-holiday-form">
+                        <input type="hidden" name="ajax" value="unset-as-weekend" />
+                        <input type="hidden" name="id" value="" />
+                        <button id="unset-as-holiday-button" class="button" style="display: none;" 
+                                onclick="deleteHoliday(); return false;"> Unset as Holiday </button>
+                    </form>
+                    
+                    
+                </div>
+                
+                <span class="invisible">
+                    <span id="availability-info-button" class="icon info" onclick="openInfoDialog('availability-tab');"></span>
+                    <span id="availability-reload-button" class="icon refresh" onclick="buildAvailabilityTab();"></span>
+                </span>
+                <div class="info-bar">
+                    <div class="dim-all-screen">
+                        <div class="text-area">
+                            <span class="message top-centered-message">
+                            Click the days that you are available to work.
+                            </span>
+                            <button class="info-bar-button bottom-centered-button" onclick="closeInfoDialog();">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =======    END AVAILABILITY TAB     ============= -->
+            
+            
+            <!-- =========      COURSES TAB       ============== -->
+            <div class="page" id="my-courses-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMainMenuTab();"></button>
+                    <em class="title"> My Courses </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content small-paddinged">
+                
+                    <ul id="my-courses-list-item-pattern" class="invisible">
+                        <li class="course-list-item"  onclick="showDetailForCourse('{0}');">
+                            <span class="course-list-cell"> {1} </span>
+                            <span class="course-list-cell"> {2} </span>
+                        </li>
+                    </ul>
+                    <div class="courses-list">
+                        <ul class="jobs-list-header">
+                        <li>
+                            <span class="course-list-cell"> Course name </span>
+                            <span class="course-list-cell"> Date </span>
+                        </li>
+                        </ul>
+                        <div class="courses-list-items scroller">
+                        <div id="my-courses-not-found" class="invisible">
+                            You have not any course
+                        </div>
+                        <ul id="my-courses-list-items" >
+                            
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="invisible">
+                    <span id="my-courses-refresh-button" class="icon refresh" onclick="buildMyCoursesTab(true);"></span>
+                </div>
+                 
+            </div>
+            <!-- =========    END COURSES TAB      ============== -->
+            
+            
+            
+            <!-- =======     VIEW COURSE TAB     ============= -->
+            <div class="page" id="view-course-tab" style="display: none;">
+                <div class="header">
+                    <button class="back-button" onclick="showMyCoursesTab();"></button>
+                    <em class="title"> View course </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                    <div id="view-course-pattern" class="invisible">
+                        <div class="title">Course name:  {title} </div>
+                        <span> Date: {date} </span>
+                        <span> Location: {location} </span>
+                        <span> Postcode: {postcode} </span>
+                        <span> Time: {time} </span>
+                        <span> Description: {description} </span>
+                        <span> Qualification: {qualification} </span>
+                    </div>
+                    
+                    <div id="view-course-container" class="view-course-container">
+                        
+                    </div>
+                    <div id="my-course-map" class="map my-course-map">
+                            
+                    </div>
+                </div>
+            </div>
+            <!-- =======   END VIEW COURSE TAB   ============= -->
+           
+            
+            
+            <!-- ===========  CONTACTS TAB    ================ -->
+            <div class="page" id="contacts-tab">
+                <div class="header">
+                    <button class="back-button" onclick="showDetailForJob();"></button>
+                    <em class="title"> Contact TLS LTD </em>
+                    <button class="logout-button" onclick="logout();"></button>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller small-paddinged">
+                    <div id="contacts-pattern" class="invisible">
+                        
+                    </div>
+                    
+                    <div id="contacts-container" class="contacts-container">
+                        <div class="title"> Call </div>
+                        <span id="contacts-phone"> ___ </span>
+                        <div class="title"> Email </div>
+                        <span> jordan@tlsltd.org </span>
+                        <div class="title"> Visit</div>
+                        <span> Traffic Labour Supplies Ltd </span>
+                        <span> West Retford Hall </span>
+                        <span> Rectory Road </span>
+                        <span> Retford </span>
+                        <span> DN22 7AY </span>
+                        
+                        <div class="title"> Website </div>
+                        <span> www.tlsltd.org </span>
+                    </div>
+                    <div id="contacts-map" class="map">
+                            
+                    </div>
+                </div>
+
+            </div>
+            <!-- =============== END CONTACTS TAB ================== -->
+            
+            
+            
+        </div>
+            
+            
+        <div id="photo-container" class="invisible photo-container">
+            <div id="photo-wrapper" class="photo-wrapper">
+                <img id="photo" alt="photo" />
+            </div>
+            
+            <ul class="photo-panel">
+                <li class="zoom-in"></li>
+                <li class="zoom-out"></li>
+                <li class="zoom-fit"></li>
+                <li class="zoom-full"></li>
+                <li class="close" onclick="closeFullScreenView();"></li>
+            </ul>
+                
+        </div>
+            
+        <div id="photo-choser-dialog" class="invisible photo-chooser-dialog">
+            <div class="dim-only-center">
+                <div class="text-area">
+                    Choose source to upload photo
+                    <button id="from-camera" class="button" style="">From Camera</button>
+                    <button id="from-saved" class="button" style="">From Saved Photos</button>
+                    <button id="close-chooser" class="button" style="">Close</button>
+                </div>
+            </div>
+        </div>
+            
+        
+        <div class="clear"></div>
+        
+        <div class="footer">
+            <span class="icon contact" onclick="callToOffice(officePhone);"></span>
+            <div id="center-button-container" class="center-button-container">
+                <span id="info-button" class="icon info"></span>
+            </div>
+            <span class="icon web" onclick="openSiteInDefaultBrowser(host);"></span>
+        </div>
+
+        </div>
+    </body>
+</html>

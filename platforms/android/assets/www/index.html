@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TLS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no" />
+        
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+       <!-- 
+        height=device-height
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi, target-densitydpi=device-dpi"
+        
+        
+        -->
+        <script type="text/javascript" >
+            var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )  ? true: false;
+            var isAndroid = ( /Android/i.test(navigator.userAgent) )  ? true: false;
+            var isIos = ( /iPhone|iPad|iPod/i.test(navigator.userAgent) )  ? true: false;
+            if( isMobile){
+                document.write('<script charset="utf-8" src="cordova.js" ><\/script>');
+            }
+            
+        </script>
+        <script type="text/javascript" src="js/phonegap.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+        <!-- === Jquery === -->
+        <script type="text/javascript" src="js/libs/jq/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jq/jquery.yiiactiveform.js"></script>
+        <script type="text/javascript" src="js/libs/jq/jquery.cookie.js"></script>
+        
+        <!-- === Scrollbars ===  -->
+        <script type="text/javascript" src="js/libs/scroll/jquery.mCustomScrollbar.min.js"></script>
+        <link href="js/libs/scroll/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+        
+        <!-- === Date Selector like iphone ===  -->
+        <link href="js/libs/mobiscroll/css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+        <script src="js/libs/mobiscroll/js/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+
+        <!-- === Calendar === -->
+        <script src="js/libs/datepicker/js/datepicker.js"></script>
+        <script src="js/libs/datepicker/js/eye.js"></script>
+        <script src="js/libs/datepicker/js/utils.js"></script>
+        <link href="js/libs/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
+        
+        
+        
+        <!-- Dipendenze e Layout di esempio -->
+        <script src="js/libs/tpv/jquery.easing.js"></script>
+        <!-- Dependencies -->
+        <script src="js/libs/tpv/jquery.imagesloaded.js"></script>
+        <script src="js/libs/tpv/jquery.jgestures.js"></script>
+        <script src="js/libs/tpv/jquery.doubletap.js"></script>
+        <!-- Plugin's Assets -->
+        <link rel="stylesheet" href="./js/libs/tpv/tpv.css">
+        <script src="js/libs/tpv/jquery.touchpanview.js"></script>
+        
+        
+        
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/lang.js"></script>
+
+        <script type="text/javascript" src="js/libs/block_ui.js"></script>
+        <script type="text/javascript" src="js/beans.js"></script>
+        <script type="text/javascript" src="js/requests.js"></script>
+        <script type="text/javascript" src="js/model.js"></script>
+        <script type="text/javascript" src="js/util.js"></script>
+        <script type="text/javascript" src="js/contractor.js"></script>
+        
+        <!---->
+        
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                log('document ready');
+                initApp();
+            });
+            
+        </script>
+
+
+    </head>
+    <body id="body">
+        <!--
+        <script src="http://192.168.172.1:8080/target/target-script-min.js#tls"></script>
+         -->
+        <div id="inner" class="inner">
+        <div class="container" id="container">
+            
+            <div class="page" id="login-tab">
+                <div class="form-logo-wrapper">
+                    <div class="form-logo"></div>
+                    <!--
+                    <span id="exit-button" class="exit-button"></span>
+                    -->
+                </div>
+
+                <div class="content scroller form">
+                    <form id="login-form" action="#" method="post" onsubmit="return false;">
+                        <input type="hidden" name="ajax" value="login-form"/>
+                        <input type="hidden" name="os" value=""/>
+                        <input type="hidden" name="device_id" value=""/>
+                        
+                        <div class="row">
+                            <label for="LoginForm_email" class="form-text-label id-label"></label>
+                            <div class="input-wrapper">
+                            <input id="LoginForm_email" name="LoginForm[email]" type="text" class="form-text-field upper-round" placeholder="Account Number" value="" /> 
+                            </div>
+                            <div class="errorMessage" id="LoginForm_email_em_" style="display:none"></div>
+                        </div>
+
+                        <div class="row">
+                            <label for="LoginForm_password" class="form-text-label password-label"></label>
+                            <div class="input-wrapper">
+                            <input id="LoginForm_password" name="LoginForm[password]" type="password" class="form-text-field lower-round" value="" placeholder="Password" />
+                            </div>
+                            <div class="errorMessage" id="LoginForm_password_em_" style="display:none"></div>
+                        </div>
+
+                        <div class="row buttons">
+                            <button type="submit" class="button" name="submit-form-button" value="" id="submit-form-button"><span class="big-button-text">Sign In</span></button>
+                            <button class="button" type="button" id="forgot-password-button">Forgot username/password</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="clear"></div>
+                
+                
+                <span class="invisible">
+                    <span id="login-info-button" class="icon info" onclick="openInfoDialog('login-tab');"></span>
+                </span>
+                
+                 <div class="info-bar">
+                    <div class="dim-login">
+                        <div class="dim-container">
+                            <div class="text-area scroller">
+                                Welcome to Fastline version 1.00
+                                <br/>
+                                <br/>
+                                Brought to you by TLS LTD
+                            </div>
+                            <button class="info-bar-button" onclick="closeInfoDialog();"><span class="big-button-text"> Close </span></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        
+        
+        
+            <div class="page" id="forgot-password-tab">
+                <div class="header">
+                    <button class="back-button" onclick="showLoginTab();"></button>
+                    <em class="title">Forgot username/password</em>
+                </div>
+                <p class="clear"></p>
+                
+                <div class="content scroller paddinged">
+                    <form id="forgotten-password-form" action="#" method="post" onsubmit="handleResetPasswordForm(); return false;">
+                        
+                        <input type="hidden" name="ajax" value="forgotten-password-form"/>
+
+                        <div class="row">
+                            <label class="form-text-label id-label"></label>
+                            <div class="input-wrapper">
+                            <input name="LoginForm[email]" type="text" class="form-text-field upper-round" placeholder="Account Number" value="" >
+                            </div>
+                            <div class="errorMessage" style="display:none"></div>
+                        </div>
+
+                        <div class="row buttons">
+                            <button class="button" type="button" id="reset-password-button">
+                                <span class="button-label"> Submit </span>
+                                <span class="button-label" style="display: none;"> Submitted </span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                
+                <span class="invisible">
+                    <span id="main-page-info-button" class="icon info" onclick="openInfoDialog('main-menu-tab');"></span>
+                </span>
+                
+                 <div class="info-bar">
+                    <div class="dim-only-center">
+                        <div class="text-area">
+                            <span class="left-up-arrow" ></span>
+                            <span class="right-down-arrow" ></span>
+                            <span class="left-down-arrow" ></span>
+
+                            <button class="button" onclick="closeInfoDialog();">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+            
+            
+            
+        
+        </div>
+
+        <div class="footer">
+            <span class="icon contact" onclick="callToOffice(officePhone);"></span>
+            <div id="center-button-container" class="center-button-container">
+                <span id="info-button" class="icon info"></span>
+            </div>
+            <span class="icon web" onclick="openSiteInDefaultBrowser(host);"></span>
+        </div>
+        </div>
+        
+    </body>
+</html>
